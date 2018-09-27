@@ -1,0 +1,12 @@
+Install cmake
+Install 'libboost-all-dev'
+
+export CC=/usr/local/bin/gcc
+export CXX=/usr/local/bin/g++
+
+git clone https://github.com/danielcardeenas/AudioStego.git
+cd AudioStego
+mkdir build
+cd build
+cmake ..
+make
