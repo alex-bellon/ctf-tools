@@ -1,1 +1,2 @@
-https://github.com/aircrack-ng/aircrack-ng
+Pillow
+binwalk
