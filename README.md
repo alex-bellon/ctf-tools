@@ -4,7 +4,7 @@ Repository of all the tools I use to make and solve CTF challenges.
 
 ### Categories:
 - Crypto
+- Forensics
 - Networking
-- Steganography
 - Web
-- everything else (haven't added yet)
+- everything else (that I haven't added yet)
