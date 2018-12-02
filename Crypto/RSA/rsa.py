@@ -34,9 +34,16 @@ def fastPrime(base, exp, mod):
 
    return result % mod
 
-
 def encryptRSA(N, e, m):
    return fastPrime(m, e, N)
 
 def decryptRSA(p, q, e, c):
    return fastPrime(c, inverse(e, (p-1)*(q-1)), p*q)
+
+opt = input("Encrypt or decrypt? [e/d] :")
+if (opt = 'e'):
+    e
+else if (opt = 'd'):
+
+else:
+    print("bye :)")
