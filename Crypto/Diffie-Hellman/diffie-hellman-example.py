@@ -1,8 +1,8 @@
 mod = 0x10abd6bdefdc9f8dfca4ce12d50a29814d4c3d
 base = 0x2
 
-m1str = banana
-m2str = apple
+m1str = 'banana'
+m2str = 'apple'
 
 m1 = m1str.encode('ascii').hex()
 m2 = m2str.encode('ascii').hex()
