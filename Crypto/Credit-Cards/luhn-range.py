@@ -1,3 +1,4 @@
+
 def format(num):
     pos = 1
     result = ''
@@ -8,7 +9,7 @@ def format(num):
         pos += 1
     return result
 
-def check_card(output, card):
+def check_card(output, card, solved):
     print('Checking ' + str(card))
     result = ''
     sum = 0
@@ -20,7 +21,7 @@ def check_card(output, card):
     
     card = str(card)
 
-    pos = 1
+    pos = 0
     for num in card:
         num = int(num)
         if pos % 2 == mod:
@@ -36,16 +37,23 @@ def check_card(output, card):
         sum += int(num);
 
     if sum % 10 == 0:
+        solved += 1
         card_str = format(card)
         output.write(card_str + '\n')
+    return solved
 
 def main():
     start = input('Input starting numbers (no spaces or dashes): ')
     min = int(start) * 100000000
     max = min + 99999999
+    solved = 0
     print('MIN: ' + str(min) + ' MAX: ' + str(max))
     output = open("valid-cards.txt", "w")
     for curr in range (min, max):
-        check_card(output, curr)
+        solved = check_card(output, curr, solved)
+        solved = int(solved)
+        if solved > 1000:
+            print('DONE')
+            break
 
 main()
