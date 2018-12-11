@@ -6,5 +6,6 @@ Repository of all the tools I use to make and solve CTF challenges.
 - Crypto
 - Forensics
 - Networking
+- Reversing
 - Web
 - everything else (that I haven't added yet)
