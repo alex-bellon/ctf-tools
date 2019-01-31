@@ -4,16 +4,23 @@ printf "\n"
 echo -n "Flag: "
 read flag
 
-mkdir secret && cd secret && echo "text 15,15 "$flag"" > flag.txt
+mkdir secret
+cd secret
+echo "text 15,15 "$flag"" > flag.txt
 
 convert -size 300x300 xc:white -font "FreeMono" -pointsize 12 -fill black -draw @flag.txt flag.png
+rm -f flag.txt
 
-cd .. && zip -r secret secret &> /dev/null
+cd ..
+zip -r secret.zip secret/ &> /dev/null
 
 echo -n "File to hide in: "
 read cover
 
-cat $cover secret.zip > $cover
+echo -n "Name for new file (must be different: "
+read result
+
+cat $cover secret.zip > $result
 
 rm -rf secret
 rm -f secret.zip
