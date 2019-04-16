@@ -1,6 +1,0 @@
-# install4j response file for Burp Suite Community Edition 1.7.36
-sys.adminRights$Boolean=false
-sys.installationDir=/home/alex/GitHub/ctf-tools/Web/BurpSuite/BurpSuiteCommunity
-sys.languageId=en
-sys.programGroupDisabled$Boolean=false
-sys.symlinkDir=/usr/local/bin
