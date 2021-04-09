@@ -1,4 +1,4 @@
-from fractions import gcd
+from math import gcd
 
 def encode():
     a = input('What coprime number do you want to use for a? ')
