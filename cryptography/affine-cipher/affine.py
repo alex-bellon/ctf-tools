@@ -40,7 +40,7 @@ def main():
         if choice == 'e' or choice == 'E':
             encode()
             break
-        elif choice == 'd' or choise == 'D':
+        elif choice == 'd' or choice == 'D':
             decode()
             break
         else: 
