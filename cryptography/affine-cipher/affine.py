@@ -1,5 +1,10 @@
 from math import gcd
 
+def modInverse(a, m):
+    for x in range(1, m):
+        if (((a%m) * (x%m)) % m == 1): return x
+    return -1
+
 def encode():
     a = input('What coprime number do you want to use for a? ')
     while(gcd(int(a), 26) != 1):
@@ -13,7 +18,7 @@ def encode():
     b = int(b)
     cipher = ''
     for letter in plain:
-        temp = chr((a * ord(letter) - 97 + b) % 26 + 97)
+        temp = chr((a * (ord(letter) - 97) + b) % 26 + 97)
         cipher += temp
     print("\n\t  :\n\t [\"]  -[ " + cipher + " ]\n\t/[_]\\\n\t ] [")
 
@@ -29,10 +34,9 @@ def decode():
     cipher = input('Input your ciphertext: ').lower()
     plain = ''
     for letter in cipher:
-        temp = chr(int(((ord(letter) - 97 - b) / a) % 26 + 97))
+        temp = chr((modInverse(a, 26) * (ord(letter) - 97 - b)) % 26 + 97)
         plain += temp
     print("\n\t  :\n\t [\"]  -[ " + plain + " ]\n\t/[_]\\\n\t ] [")
-
 
 def main():
     while(1):
@@ -43,7 +47,7 @@ def main():
         elif choice == 'd' or choice == 'D':
             decode()
             break
-        else: 
+        else:
             print('Please choose [e] or [d]')
 
 main()
